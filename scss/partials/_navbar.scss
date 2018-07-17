@@ -1,0 +1,91 @@
+/*! _dashboard-navbar.scss | PROVYUH */
+
+/* ==========================================================================
+Dashboard navbar styles
+========================================================================== */
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Navbar
+1. Quick Search
+2. Search Modal
+3. Navbar dropdowns
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Navbar
+========================================================================== */
+
+//Dashboard Navbar
+nav.dashboard-nav {
+    margin-left: 80px;
+    position: fixed;
+    width: 100%;
+    right: 0;
+    left: 0;
+    max-width: calc(100% - 80px);
+    border-bottom: 1px solid $fade-grey;
+
+    .container {
+        .navbar-brand {
+            margin-left: 0;
+        }
+    }
+
+    .container.is-fluid {
+        margin: 0;
+        height: 65px;
+    }
+
+    //logout button
+    .logout-button {
+        width: 65px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            color: $title-grey !important;
+            margin-left: 0 !important;
+            top: 0 !important;
+        }
+
+        &:hover {
+            background: $light-grey;
+
+            i {
+                color: $secondary !important;
+            }
+        }
+    }
+
+    //icon menu item
+    .nav-icon {
+        width: 65px;
+        height: 65px;
+        display: flex;
+        justify-content: center !important;
+        align-items: center;
+
+        i {
+            font-size: 18px;
+            font-weight: normal;
+            color: $title-grey;
+            position: relative;
+            top: 2px;
+            cursor: pointer;
+        }
+
+        &:hover i {
+            color: $secondary;
+        }
+    }
+    .navbar-item {
+        //reader mode switch
+        &.reader-switch .field {
+            padding-top: 7px;
+        }
+    }
+}

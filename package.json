@@ -1,0 +1,26 @@
+{
+  "name": "gulp_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nihar Bheemanathi",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.7.1",
+    "node-sass": "^4.9.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.6.5",
+    "browser-sync": "^2.24.5",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "panini": "^1.6.2",
+    "rimraf": "^2.6.2"
+  }
+}
