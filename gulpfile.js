@@ -25,13 +25,13 @@ gulp.task('setupBulma', function () {
 
 //Copy assets to dist folder
 gulp.task('copy', () => {
-  gulp.src(['assets/css/*.css']).pipe(gulp.dest('_site/assets/css/'));
-  gulp.src(['assets/fonts/**/*']).pipe(gulp.dest('_site/assets/fonts/'));
+  gulp.src(['assets/css/*.css']).pipe(gulp.dest('docs/assets/css/'));
+  gulp.src(['assets/fonts/**/*']).pipe(gulp.dest('docs/assets/fonts/'));
 });
 //Copy images to dist site
 gulp.task('copy-images', function () {
   gulp.src('images/**/*')
-    .pipe(gulp.dest('./_site/assets/images/'));
+    .pipe(gulp.dest('./docs/assets/images/'));
 });
 
 
@@ -42,7 +42,7 @@ gulp.task("scss", function () {
     .pipe(sass(sassOptions).on("error", sass.logError))
     .pipe(postcss([autoprefixer]))
     .pipe(sourcemaps.write("./maps"))
-    .pipe(gulp.dest("./_site/assets/css"))
+    .pipe(gulp.dest("./docs/assets/css"))
     .pipe(browserSync.stream());
 });
 gulp.task("sass", function () {
@@ -52,7 +52,7 @@ gulp.task("sass", function () {
     .pipe(sass(sassOptions).on("error", sass.logError))
     .pipe(postcss([autoprefixer]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest("./_site/assets/css"))
+    .pipe(gulp.dest("./docs/assets/css"))
     .pipe(browserSync.stream());
 });
 
@@ -71,7 +71,7 @@ gulp.task("compile-html", () => {
         data: "./html/data/"
       })
     )
-    .pipe(gulp.dest("_site"));
+    .pipe(gulp.dest("docs"));
 });
 // Compile css from node modules and assets
 gulp.task('compile-css', function () {
@@ -88,7 +88,7 @@ gulp.task('compile-css', function () {
     nodepath + 'jquery-ui-dist/jquery-ui.min.css',
   ])
     .pipe(concat('app.css'))
-    .pipe(gulp.dest('./_site/assets/css/'));
+    .pipe(gulp.dest('./docs/assets/css/'));
 });
 
 gulp.task("compile-html:reset", function (done) {
@@ -98,15 +98,15 @@ gulp.task("compile-html:reset", function (done) {
 gulp.task('init', ['setupBulma']);
 // Erases the dist folder
 gulp.task('clean', function () {
-  rimraf('./_site');
+  rimraf('./docs');
 });
 
 gulp.task('build', ['clean', 'copy', 'copy-images', 'sass', 'scss', 'compile-html','compile-css'], () => {
 
 });
 gulp.task("watch", ["scss-watch"], () => {
-  browserSync.init({ notify: false, server: { baseDir: "./_site" } });
-  gulp.watch("./_site/**/*.html", () => { browserSync.reload(); });
+  browserSync.init({ notify: false, server: { baseDir: "./docs" } });
+  gulp.watch("./docs/**/*.html", () => { browserSync.reload(); });
   // gulp.watch("./html/{layouts,includes,helpers,data}/**/*", ["compile-html"]);
   gulp.watch(["./html/{layouts,includes,helpers,data}/**/*"], ["compile-html:reset", "compile-html"]);
   gulp.watch(['./src/{layouts,partials,helpers,data}/**/*'], [panini.refresh]);
