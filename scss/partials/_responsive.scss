@@ -59,4 +59,10 @@ body.reader-mode {
         margin-left: 60px;
         max-width: calc(100% - 60px);
     }
+
+    //Quickview
+    .quickview.is-active {
+        min-width: 100%;
+        z-index: 1001;        
+    }
 }

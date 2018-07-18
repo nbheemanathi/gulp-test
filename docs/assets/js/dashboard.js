@@ -31,5 +31,13 @@ $(document).ready(function ($) {
          $('.side-icon.is-active').removeClass('is-active');
     });
 
+    //quickView toggle event
+    $('.chat-button').on("click", function () {
+        $('.quickview').toggleClass('is-active');
+    });
+    $('.cross-container').on("click", function () {
+        $('.quickview').toggleClass('is-active');
+    });
+
 
 })
