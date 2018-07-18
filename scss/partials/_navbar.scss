@@ -9,7 +9,7 @@ TABLE OF CONTENTS
 0. Navbar
 1. Quick Search
 2. Search Modal
-3. Navbar dropdowns
+3. Navbar notifications
 =============================================================================
 ***/
 
@@ -17,7 +17,9 @@ TABLE OF CONTENTS
 0. Navbar
 ========================================================================== */
 
-//Dashboard Navbar
+/* ==========================================================================
+0.Navbar
+========================================================================== */
 nav.dashboard-nav {
     margin-left: 80px;
     position: fixed;
@@ -30,12 +32,13 @@ nav.dashboard-nav {
 
     .container {
         .navbar-brand {
-            margin-left: 0;            
+            margin-left: 0;
         }
-        .navbar-menu{
+
+        .navbar-menu {
             margin-right: 0;
         }
-    }   
+    }
 
     .container.is-fluid {
         margin: 0;
@@ -77,7 +80,7 @@ nav.dashboard-nav {
             font-size: 18px;
             font-weight: normal;
             color: $title-grey;
-            position: relative;            
+            position: relative;
             cursor: pointer;
         }
 
@@ -91,10 +94,22 @@ nav.dashboard-nav {
         &.reader-switch .field {
             padding-top: 7px;
         }
+
+         //new messages and notifications indicator
+         .new-circle {
+            width: 13px;
+            height: 13px;
+            left: 9px;
+            top: -8px;
+            position: absolute;
+            border-radius: 50px;
+            border: 2px solid white;
+            background-color: $primary;
+        }
     }
 
-    //QuickView 
-    .chat-button{
+    //QuickView
+    .chat-button {
         width: 65px;
         background-color: $secondary;
         cursor: pointer;
@@ -112,4 +127,21 @@ nav.dashboard-nav {
             opacity: 0.9;
         }
     }
+}
+
+/* ==========================================================================
+1. Quick Search
+========================================================================== */
+
+/* ==========================================================================
+2. Search Modal
+========================================================================== */
+
+
+/* ==========================================================================
+3. Navbar notifications
+========================================================================== */
+
+.drop-pop {
+    position: relative;
 }
