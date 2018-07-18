@@ -1,0 +1,42 @@
+
+/* ==========================================================================
+Dashboard responsive styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Mobile
+1. Portrait Tablet
+=============================================================================
+***/
+
+// Reader mode (only mobile)
+body.reader-mode {
+    .main-menu {
+        transform: translateX(-80px);
+    }
+
+    .child-menu {
+        transform: translateX(-311px);
+    }
+
+    nav.dashboard-nav {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .dashboard-wrapper {
+        margin-left: 0;
+    }
+
+    footer {
+        margin-left: 0 !important;
+    }
+}
+//Mobile media queries
+@media (max-width: 1088px) {
+    .search-icon {
+        margin-left: auto !important;
+    }
+}

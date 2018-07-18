@@ -27,7 +27,7 @@
                     <i class="sl sl-icon-layers"></i>
                 </li>
                 <li class="side-icon" data-child-menu="dashboard-user">
-                    <i class="sl sl-icon-user"></i>
+                    <i class="sl sl-icon-people"></i>
                 </li>
                 <li class="side-icon" data-child-menu="dashboard-calendar">
                     <i class="sl sl-icon-event"></i>
@@ -70,11 +70,44 @@
                     </div>
                 </div>
                 <!-- Reader mode switch -->
+                <!-- Global search (visible on mobile only) -->
+                <div class="navbar-item nav-icon search-icon modal-trigger is-hidden-desktop" data-modal="search-modal">
+                    <i class="sl sl-icon-magnifier"></i>
+                </div>
+                <!-- /Global search -->
+    
+                <!-- Right sidebar trigger (visible on mobile only)  -->
+                <div class="navbar-item nav-icon chat-button is-hidden-desktop" data-show="quickview" data-target="main-quickview">
+                    <i class="im im-icon-Speach-Bubble11"></i>
+                </div>
+                <!-- /Right sidebar trigger -->
     
             </div>
             <!-- /Nav left -->
+    
+            <!-- Nav right -->
+            <div class="navbar-menu">
+                <div class="navbar-end">
+                    <!-- Global search (desktop and tablet only) -->
+                    <div class="navbar-item nav-icon search-icon modal-trigger" data-modal="search-modal">
+                        <i class="sl sl-icon-magnifier"></i>
+                    </div>
+                    <!-- /Global search -->
+    
+                    <!-- Right sidebar trigger (desktop and tablet only) -->
+                    <div class="navbar-item nav-icon chat-button" data-show="quickview" data-target="main-quickview">
+                        <i class="im im-icon-Speach-Bubble11"></i>
+                    </div>
+                    <!-- /Right sidebar trigger -->
+                </div>
+            </div>
+            <!-- /Nav right -->
+    
         </div>
     </nav>
-    <!-- /Top Navbar --></body>
+    <!-- /Top Navbar -->    <!-- Concatenated jQuery and plugins -->
+    <script src="assets/js/app.js"></script>
+    
+    <script src="assets/js/dashboard.js"></script></body>
 
 </html>

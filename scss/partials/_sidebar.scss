@@ -29,8 +29,8 @@ TABLE OF CONTENTS
     width:80px;
     overflow:visible;
     -webkit-transition:width .05s linear;
-    transition: width .05s linear;
-    transition: transform 0.3s;
+    transition: width .5s linear;
+    transition: transform .5s;
     z-index:1000;
 
     &-inner {

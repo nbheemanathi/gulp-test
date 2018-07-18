@@ -91,6 +91,23 @@ gulp.task('compile-css', function () {
     .pipe(gulp.dest('./docs/assets/css/'));
 });
 
+// Compile js 
+gulp.task('compile-js', function() {
+  gulp.src([
+    nodepath + 'jquery/dist/jquery.min.js', 
+    nodepath + 'jquery-ui-dist/jquery-ui.min.js',
+  ])
+  .pipe(concat('app.js'))
+  .pipe(gulp.dest('./docs/assets/js/'));
+});
+
+
+//Copy js to production site
+gulp.task('copy-js', function() {
+  gulp.src('js/**/*.js')
+      .pipe(gulp.dest('./docs/assets/js/'));
+});
+
 gulp.task("compile-html:reset", function (done) {
   panini.refresh();
   done();
@@ -101,12 +118,13 @@ gulp.task('clean', function () {
   rimraf('./docs');
 });
 
-gulp.task('build', ['clean', 'copy', 'copy-images', 'sass', 'scss', 'compile-html','compile-css'], () => {
+gulp.task('build', ['clean', 'copy', 'copy-images','copy-js', 'sass', 'scss', 'compile-html','compile-css' ,'compile-js'], () => {
 
 });
 gulp.task("watch", ["scss-watch"], () => {
   browserSync.init({ notify: false, server: { baseDir: "./docs" } });
   gulp.watch("./docs/**/*.html", () => { browserSync.reload(); });
+  gulp.watch('js/**/*', ['copy-js'] ,() =>{ browser.reload();} );
   // gulp.watch("./html/{layouts,includes,helpers,data}/**/*", ["compile-html"]);
   gulp.watch(["./html/{layouts,includes,helpers,data}/**/*"], ["compile-html:reset", "compile-html"]);
   gulp.watch(['./src/{layouts,partials,helpers,data}/**/*'], [panini.refresh]);
