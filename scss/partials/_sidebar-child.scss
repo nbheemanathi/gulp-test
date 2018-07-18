@@ -1,0 +1,44 @@
+//Child menu (slides when a main menu item is clicked)
+.child-menu {
+    background: $secondary;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 80px;
+    transform: translateX(-300px);
+    overflow: hidden;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    z-index: 999;
+
+    .child-menu-inner {
+        height: 100%;
+        ul li {
+            min-height: 65px;
+        }
+    }
+
+    //header styles
+    .child-header {
+        display: flex;        
+        justify-content: flex-end;
+        align-items: center;
+        border-bottom: 1px solid rgba($secondary, 15%);
+    }
+    //header title
+    .sidebar-title {
+        margin-right: auto;
+        padding-left: 20px;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        color: $smoke-white;
+        letter-spacing: 3px;
+    }
+}
+
+//Sidebar active state
+.is-sidebar-translated {
+    transform: translateX(0);
+}

@@ -23,7 +23,7 @@ body.reader-mode {
     }
 
     .child-menu {
-        transform: translateX(-311px);
+        transform: translateX(-330px);
     }
 
     nav.dashboard-nav {
@@ -52,7 +52,9 @@ body.reader-mode {
     .main-menu {
         width: 60px;
     }
-
+    .child-menu {
+        left: 60px;
+    }
     nav.dashboard-nav {
         margin-left: 60px;
         max-width: calc(100% - 60px);

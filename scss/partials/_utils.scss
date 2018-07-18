@@ -1,0 +1,89 @@
+/* ==========================================================================
+Dashboard utilities
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+1. Close and menu icons
+2. Hamburger icon
+=============================================================================
+***/
+
+.menu-wrapper{
+    background: transparent;
+    display: block;
+    width: 48px;
+    height: 48px;
+    padding: 0px;
+    float: left;
+    margin: 0 14px;
+
+    //toggle 
+    .icon-box-toggle {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        display: block;
+
+        &.active {
+            transform: translate(0px, 0px) rotate(90deg);
+
+            //top bar
+            i.icon-line-top {
+                margin: -1.5px 0 0 -10px;
+                left: 50%;
+                top: 50%;
+                transform: translate(0px, 0px) rotate(45deg);
+            }
+            //middle bar
+            i.icon-line-center {
+                visibility: hidden;               
+            }
+            //bottom bar
+            i.icon-line-bottom {
+                margin: -1.5px 0 0 -10px;
+                left: 50%;
+                top: 50%;                
+                transform: translate(0px, 0px) rotate(135deg);
+            }
+        }
+    }
+
+    //wrapper
+    .rotate {                
+        transition: all .5s ease;
+    }
+    .icon-line-top {
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background: $white;
+        margin: -3px 0 0 -10px;
+        left: 50%;
+        top: 40%;        
+        transition: all .5s ease;
+    }
+    //middle bar
+    .icon-line-center {
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background: $white;
+        margin: -1.5px 0 0 -10px;
+        left: 50%;
+        top: 50%;        
+        transition: all .1s ease;
+    }
+    //bottom bar
+    .icon-line-bottom {
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background: $white;
+        margin: 1.4px 0 0 -10px;
+        left: 50%;
+        top: 60%;       
+        transition: all .5s ease;
+    }
+}

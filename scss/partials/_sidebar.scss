@@ -92,6 +92,11 @@ TABLE OF CONTENTS
                 color: $title-grey;
                 transition: color .3s;
             }
+            &.is-active {
+                i {
+                    color: $secondary; 
+                }
+            }
 
             &:hover i {
                 color: $secondary;

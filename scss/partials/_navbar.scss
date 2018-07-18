@@ -129,6 +129,11 @@ nav.dashboard-nav {
     }
 }
 
+//Pushed navbar state when sidebar is open
+.is-pushed {
+    transform: translateX(250px);
+}
+
 /* ==========================================================================
 1. Quick Search
 ========================================================================== */
