@@ -1,44 +1,124 @@
 //Child menu (slides when a main menu item is clicked)
 .child-menu {
-    background: $secondary;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 80px;
-    transform: translateX(-300px);
-    overflow: hidden;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    z-index: 999;
+  background: $secondary;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 80px;
+  transform: translateX(-300px);
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 999;
 
-    .child-menu-inner {
-        height: 100%;
-        ul li {
-            min-height: 65px;
-        }
+  .child-menu-inner {
+    height: 100%;
+    ul li {
+      min-height: 65px;
     }
+  }
 
-    //header styles
-    .child-header {
-        display: flex;        
-        justify-content: flex-end;
-        align-items: center;
-        border-bottom: 1px solid rgba($secondary, 15%);
+  //header styles
+  .child-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid rgba($secondary, 15%);
+  }
+  //header title
+  .sidebar-title {
+    margin-right: auto;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: $smoke-white;
+    letter-spacing: 3px;
+  }
+  //Menu list
+  ul.sidebar-menu {
+    margin: 0;
+    padding: 7px 0;
+    max-width: 400px;
+    list-style: none;
+    list-style-type: none;
+    display: none;
+    &.is-active {
+      display: block;
     }
-    //header title
-    .sidebar-title {
-        margin-right: auto;
-        padding-left: 20px;
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        font-weight: 300;
-        color: $smoke-white;
-        letter-spacing: 3px;
+  }
+  .sidebar-menu li a {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      background-color: darken($secondary, 5%);
     }
+  }
+  //Menu items
+  .sidebar-menu li a span {
+    margin-right: 20px;
+    color: #fff;
+  }
+
+  //Menu items with submenu items
+  li.have-children.active {
+    background-color: darken($secondary, 5%);
+  }
+  li.have-children ul {
+    padding: 0;
+    background-color: darken($secondary, 10%);
+  }
+  li.have-children ul li {
+    min-height: 10px !important;
+  }
+  li.have-children ul li a {
+    background-color: darken($secondary, 20%);
+    padding: 12px 25px 12px 62px;
+    span {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+    span:after {
+      content: "";
+    }
+  }
+
+  li.have-children ul li a:hover,
+  li.have-children ul li.is-active a {
+    color: #fff;
+    background-color: darken($secondary, 25%);
+    padding: 12px 25px 12px 62px;
+  }
+  li.have-children,
+  li {
+    position: relative;
+  }
+  .have-children span::after {
+    position: absolute;
+    top: 21px;
+    right: 30px;
+    content: "\E409";
+    color: $white;
+    transition: all 0.5s;
+  }
+  li.active.have-children span::after {
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  .sidebar-menu .have-children > ul {
+    display: none;
+  }
 }
 
 //Sidebar active state
 .is-sidebar-translated {
-    transform: translateX(0);
+  transform: translateX(0);
 }
