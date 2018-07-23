@@ -1,0 +1,43 @@
+/* ==========================================================================
+Dashboard right sidebar styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Right Quickview
+1. 
+2. 
+3.
+
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Right Quickview
+========================================================================== */
+.quickview {
+    //navigation tabs
+    .tabs {
+        ul li a {
+            height: 80px;
+            border-bottom: 2px solid transparent;
+            overflow: hidden;
+            i {
+                font-size: 1.4rem;
+                transition: all 0.3s;
+                transform: scale(0.8);
+            }
+        }
+        ul li:hover a {
+            border-bottom: 2px solid $fade-grey !important;
+        }
+        ul li.is-active a {
+            border-bottom: 2px solid $secondary !important;
+            i {
+                color: $secondary;
+                transform: scale(1);
+            }
+        }
+    }
+}

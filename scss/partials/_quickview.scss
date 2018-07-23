@@ -1,13 +1,14 @@
 /* ==========================================================================
 Dashboard quickview styles
 ========================================================================== */
+
 /***
 TABLE OF CONTENTS
 =============================================================================
 0. Variables
 1. Quickview
 2. Header
-3.
+3. Body
 
 =============================================================================
 ***/
@@ -15,9 +16,9 @@ TABLE OF CONTENTS
 /* ==========================================================================
 0. Variables
 ========================================================================== */
+
 $quickview-shadow: 5px 0px 13px 3px rgba(0, 0, 0, 0.1) !default;
 $quickview-divider: 1px solid $light-grey !default;
-
 /* ==========================================================================
 1. Quickview
 ========================================================================== */
@@ -37,9 +38,7 @@ $quickview-divider: 1px solid $light-grey !default;
     transition: 0.3s ease;
     backface-visibility: hidden;
     perspective: 1000;
-    will-change: transform;
-
-    //active state
+    will-change: transform; //active state
     &.is-active {
         right: 0;
         box-shadow: $quickview-shadow;
@@ -49,18 +48,17 @@ $quickview-divider: 1px solid $light-grey !default;
 /* ==========================================================================
 2. Header
 ========================================================================== */
+
 .quickview-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
     min-height: 66px !important;
-    border-bottom: $quickview-divider;
-    //title
+    border-bottom: $quickview-divider; //title
     .title {
         margin-bottom: 0;
-    }
-    //secondary header
+    } //secondary header
     &.is-secondary {
         background: $secondary;
         p {
@@ -72,12 +70,20 @@ $quickview-divider: 1px solid $light-grey !default;
             color: $white;
             font-size: 20px
         }
-    }
-    //close icon
+    } //close icon
     .cross-container {
         transition: transform 0.3s;
         &:hover {
             transform: rotate(90deg);
         }
     }
+}
+
+/* ==========================================================================
+3. Body
+========================================================================== */
+
+.quickview-body {
+    -webkit-box-flex: 1;
+    flex: 1 1 0%;
 }

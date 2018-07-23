@@ -67,4 +67,12 @@ $(document).ready(function($) {
     })
      //#endregion
 
+     //Quick view Navigation Tabs
+    $('.navigation-tabs ul li').on("click", function () {
+      var tab_id = $(this).attr('data-tab');
+      $(this).siblings('li').removeClass('is-active');
+      $(this).closest('.navigation-tabs').children('.navtab-content').removeClass('is-active');
+      $(this).addClass('is-active');
+    });
+
 });

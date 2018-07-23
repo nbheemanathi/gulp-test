@@ -18,6 +18,7 @@ TABLE OF CONTENTS
 @import "partials/sidebar";
 @import "partials/sidebar-child";
 @import "partials/navbar";
+@import "partials/right-sidebar";
 @import 'partials/utils';
 @import 'partials/helpers';
 @import 'partials/quickview';
@@ -61,6 +62,9 @@ nav ul, nav li {
     outline: 0;
     margin: 0;
     padding: 0;
+}
+ul, ol {
+    list-style-type: none;
 }
 
 @font-face {
