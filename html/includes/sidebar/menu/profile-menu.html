@@ -1,11 +1,21 @@
 <!-- Profile wrapper -->
 <ul class="profile">
     <li>
-         <!-- Profile avatar -->
-         <a class="profile-trigger" href="javascript:void(0);">
+        <!-- Profile avatar -->
+        <a class="profile-trigger" href="javascript:void(0);">
             <img class="main-menu-avatar" src="assets/images/dashboard/avatar_small.jpg" alt="profile">
             <span class="dot"></span>
-         </a>
+        </a>
+        <!-- /Profile avatar -->
+        <div class="fab js-hamburger">
+            <div class="profile-container">
+                <div class="inner">
+                    {{> profile-cover}}
+                </div>
+            </div>
+            <div class="fab__ripple"></div>
+            <div class="hamburger"></div>
+        </div>
 
     </li>
 </ul>

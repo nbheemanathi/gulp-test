@@ -30,12 +30,12 @@ TABLE OF CONTENTS
             }
         }
         ul li:hover a {
-            border-bottom: 2px solid $fade-grey !important;
+            border-bottom: 2px solid #ededed !important;
         }
         ul li.is-active a {
-            border-bottom: 2px solid $secondary !important;
+            border-bottom: 2px solid #7F00FF !important;
             i {
-                color: $secondary;
+                color: #7F00FF;
                 transform: scale(1);
             }
         }

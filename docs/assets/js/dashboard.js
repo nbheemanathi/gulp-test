@@ -75,4 +75,19 @@ $(document).ready(function($) {
       $(this).addClass('is-active');
     });
 
+    //FAB
+    $('.profile-trigger').on('click', function () {
+      $('.main-menu-avatar, .dot').toggleClass('vanish');
+      if ($('.js-hamburger').hasClass('is-active')) {
+          $('.js-hamburger').removeClass('is-active');
+          $('body').removeClass('is-fixed');
+      } else {
+          $('.js-hamburger').addClass('is-active');
+          //wait 700ms before adding the fixed class to the body to prevent unpleasant effects
+          setTimeout(function () {
+              $('body').addClass('is-fixed');
+          }, 700);
+      }
+  });
+
 });
